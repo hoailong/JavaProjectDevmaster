@@ -1,0 +1,55 @@
+﻿CƠ SỞ DỮ LIỆU:
+
+USER: (QUẢN LÝ TÀI KHOẢN NGƯỜI DÙNG)
++UserName (P)
++Password
++FullName
++GroupId (F)
++Phone
++Email
++Address
+
+TABLE: (QUẢN LÝ BÀN ĂN)
++TableId (P)
++TableName
++MaxPeople
++Empty
+
+TIME: (QUẢN LÝ THỜI GIAN ĂN)
++TimeId (P)
++TimeName
+
+FOODGROUP: (QUẢN LÝ NHÓM THỨC ĂN)
++GroupId (P)
++GroupName
++GroupCode
+
+FOOD: (QUẢN LÝ THỨC ĂN)
++FoodId
++FoodName
++FoodImage
++FoodCost
++GroupId (F)
+
+TABLE_TIME
++TableId (p)(F)
++TimeId (p)(F)
+
+ORDER: (QUẢN LÝ ĐẶT BÀN)
++OrderId (p)
++TableId (p)(F)
++TimeId (p)(F)
++UserId (F)
+
+ORDERDETAIL: (QUẢN LÝ CHI TIẾT ĐẶT BÀN)
++OrderId
++Date
++Description
++
+
+NEWS: (QUẢN LÝ BÀI VIẾT,KHUYẾN MÃI)
++NewsId
++Title
++Image
++CreateDate
++Content
