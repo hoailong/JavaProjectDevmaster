@@ -6,26 +6,22 @@ public class UserModel {
 	private String password;
 	private String fullName;
 	private int groupId;
-	private int gender;
 	private String phone;
 	private String email;
-	private String address;
 
 	public UserModel() {
 
 	}
 
-	public UserModel(int userId, String userName, String password, String fullName, int groupId, int gender,
-			String phone, String email, String address) {
+	public UserModel(int userId, String userName, String password, String fullName, int groupId,
+			String phone, String email) {
 		this.userId = userId;
 		this.userName = userName;
 		this.password = password;
 		this.fullName = fullName;
 		this.groupId = groupId;
-		this.gender = gender;
 		this.phone = phone;
 		this.email = email;
-		this.address = address;
 	}
 
 	public int getUserId() {
@@ -68,14 +64,6 @@ public class UserModel {
 		this.groupId = groupId;
 	}
 
-	public int getGender() {
-		return gender;
-	}
-
-	public void setGender(int gender) {
-		this.gender = gender;
-	}
-
 	public String getPhone() {
 		return phone;
 	}
@@ -92,12 +80,12 @@ public class UserModel {
 		this.email = email;
 	}
 
-	public String getAddress() {
-		return address;
+	@Override
+	public String toString() {
+		return "UserModel [userId=" + userId + ", userName=" + userName + ", password=" + password + ", fullName="
+				+ fullName + ", groupId=" + groupId + ", phone=" + phone + ", email=" + email + "]";
 	}
 
-	public void setAddress(String address) {
-		this.address = address;
-	}
+
 
 }

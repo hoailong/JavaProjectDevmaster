@@ -8,4 +8,5 @@ public interface IFoodService {
 
 	List<FoodModel> findByCode(String groupCode);		
 	List<FoodModel> findTop(String groupCode);		
+	void save(FoodModel foodModel);
 }

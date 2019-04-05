@@ -8,4 +8,5 @@ public interface IFoodDAO extends GenericDAO<FoodModel> {
 	List<FoodModel> findAll();
 	List<FoodModel> findByGroupCode(String groupCode);
 	List<FoodModel> findTopByGroupCode(String groupCode, int count);
+	void insert(FoodModel foodModel);
 }

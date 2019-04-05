@@ -4,7 +4,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<meta charset="UTF-8">
+  <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta name="description" content="">
   <meta name="author" content="">
@@ -14,45 +14,11 @@
   <!-- Bootstrap core CSS -->
   <link href="<%=request.getContextPath()%>/resources/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
   <link href="<%=request.getContextPath()%>/resources/css/mystyle.css" rel="stylesheet">
-  <!-- Custom styles for this template -->
   <link href="<%=request.getContextPath()%>/resources/css/shop-homepage.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
 </head>
 <body>
-
-  <!-- Navigation -->
-  <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
-    <div class="container">
-      <a class="navbar-brand" href="#">Start Bootstrap</a>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarResponsive">
-        <ul class="navbar-nav ml-auto">
-          <li class="nav-item active">
-            <a class="nav-link" href="#">Trang chủ
-              <span class="sr-only">(current)</span>
-            </a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="<%=request.getContextPath()%>/thuc-don-chinh">Thực đơn</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="<%=request.getContextPath()%>/Order">Đặt bàn</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Khuyến mãi</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Giới Thiệu</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Liên hệ</a>
-          </li>
-        </ul>
-      </div>
-    </div>
-  </nav>
-
+<jsp:include page="header.jsp"/>
   <!-- Page Content -->
   <div class="container">
 
@@ -60,7 +26,7 @@
 
       <div class="col-lg-3">
 
-        <h1 class="my-4"><a href="thuc-don-chinh">THỰC ĐƠN</a></h1>
+        <h1 class="my-4"><a href="<%=request.getContextPath()%>">THỰC ĐƠN</a></h1>
         <div class="list-group">
 	        <c:forEach items="${listFoodGroup}" var="foodGroup">
 	        	<a href="thuc-don?code=${foodGroup.code}" class="list-group-item">${foodGroup.name}</a>
@@ -118,66 +84,6 @@
 	            </div>
 	          </div>
 			</c:forEach>
-	          <!-- <div class="col-lg-4 col-md-6 mb-4">
-	            <div class="card h-100">
-	              <a href="#"><img class="card-img-top" src="http://placehold.it/700x400" alt=""></a>
-	              <div class="card-body">
-	                <h4 class="card-title">
-	                  <a href="#">Item One</a>
-	                </h4>
-	                <h5>$24.99</h5>
-	              </div>
-	            </div>
-	          </div>
-	
-	          <div class="col-lg-4 col-md-6 mb-4">
-	            <div class="card h-100">
-	              <a href="#"><img class="card-img-top" src="http://placehold.it/700x400" alt=""></a>
-	              <div class="card-body">
-	                <h4 class="card-title">
-	                  <a href="#">Item One</a>
-	                </h4>
-	                <h5>$24.99</h5>
-	              </div>
-	            </div>
-	          </div>
-	
-	          <div class="col-lg-4 col-md-6 mb-4">
-	            <div class="card h-100">
-	              <a href="#"><img class="card-img-top" src="http://placehold.it/700x400" alt=""></a>
-	              <div class="card-body">
-	                <h4 class="card-title">
-	                  <a href="#">Item One</a>
-	                </h4>
-	                <h5>$24.99</h5>
-	              </div>
-	            </div>
-	          </div>
-	
-	          <div class="col-lg-4 col-md-6 mb-4">
-	            <div class="card h-100">
-	              <a href="#"><img class="card-img-top" src="http://placehold.it/700x400" alt=""></a>
-	              <div class="card-body">
-	                <h4 class="card-title">
-	                  <a href="#">Item Two</a>
-	                </h4>
-	                <h5>$24.99</h5>
-	              </div>
-	            </div>
-	          </div>
-	
-	          <div class="col-lg-4 col-md-6 mb-4">
-	            <div class="card h-100">
-	              <a href="#"><img class="card-img-top" src="http://placehold.it/700x400" alt=""></a>
-	              <div class="card-body">
-	                <h4 class="card-title">
-	                  <a href="#">Item Three</a>
-	                </h4>
-	                <h5>$24.99</h5>
-	              </div>
-	            </div>
-	          </div> -->
-	
 	        </div>
         </c:forEach>
         <!-- /.row -->
@@ -190,15 +96,7 @@
 
   </div>
   <!-- /.container -->
-
-  <!-- Footer -->
-  <footer class="py-5 bg-dark">
-    <div class="container">
-      <p class="m-0 text-center text-white">Copyright &copy; Your Website 2019</p>
-    </div>
-    <!-- /.container -->
-  </footer>
-
+  <jsp:include page="footer.jsp"/>
   <!-- Bootstrap core JavaScript -->
   <script src="<%=request.getContextPath()%>/resources/vendor/jquery/jquery.min.js"></script>
   <script src="<%=request.getContextPath()%>/resources/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>

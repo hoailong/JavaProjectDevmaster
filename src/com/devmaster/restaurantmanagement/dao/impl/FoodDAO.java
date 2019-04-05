@@ -29,4 +29,10 @@ public class FoodDAO extends AbstractDAO<FoodModel> implements IFoodDAO{
 		return list;
 	}
 
+	@Override
+	public void insert(FoodModel foodModel) {
+		String sql = "Insert into tblFood(FoodName, FoodImage, FoodCost, GroupId) values(?,?,?,?)";
+		udl(sql, foodModel.getFoodName(), foodModel.getImage(), foodModel.getCost(), foodModel.getGroupId());
+	}
+
 }

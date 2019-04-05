@@ -1,85 +1,49 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
-<!DOCTYPE html>
-<html>
-<head>
-<meta charset="UTF-8">
-<link rel="icon" href="<%=request.getContextPath()%>/images/restaurant-icon-4.png" type="image/x-icon" />
-<%-- <link rel="stylesheet" type="text/css" href="<%=request.getContextPath()%>/css/style.css" /> --%>
-<title>Insert title here</title>
-<style>
-header {
-  width:100%;
-  height:100px;
-  background:#ff7317;
-  position:absolute;
-  top: 0;
-  left:0;
-  overflow: hidden;
-
-}
-.container {
-  margin: 0 10%;
-}
-.logo {
-  margin: 0 30px;
-    float:left;
-}
-
-.logo img {
-  width:100px;
-  height:auto;
-}
-
-.nav {
-  font-family: tahoma;
-  float:right;
-  height: 100%;
-}
-
-.nav ul {
-  align-items: center;
-  justify-content: center;
-  display: flex;
-  list-style: none;
-}
-
-.nav ul li {
-  display: block;
-  position: relative;
-}
-.nav ul li a {
-  text-decoration: none;
-  color: white;
-  padding:15px;
-  line-height: 100px;
-  text-transform: uppercase;
-}
-
-.nav ul li a:hover {
-  text-decoration: underline;
-}
-
-</style>
-</head>
-<body>
-	<header>
+    pageEncoding="UTF-8"%>
+<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%> 
+<!-- Navigation -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
     <div class="container">
-  		<div class="logo">
-          <img src="http://lauphan.com/images/logo.jpg" alt="Trang Chủ">
-      </div>
-      <div class="nav">
-        <ul>
-          <li><a href="#">Trang Chủ</a></li>
-          <li><a href="#">Thực Đơn</a></li>
-          <li><a href="#">Đặt Bàn</a></li>
-          <li><a href="#">Khuyến Mãi</a></li>
-          <li><a href="#">Giới Thiệu</a></li>
-          <li><a href="#">Liên Hệ</a></li>
+      <a class="navbar-brand" href="#">Mr.Hoài Restaurant</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item active">
+            <a class="nav-link" href="#">Trang chủ
+              <span class="sr-only">(current)</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="<%=request.getContextPath()%>/thuc-don-chinh">Thực đơn</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="<%=request.getContextPath()%>/Order">Đặt bàn</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Khuyến mãi</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Giới Thiệu</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Liên hệ</a>
+          </li>
+          <c:if test="${not empty USERMODEL}">
+	          <li class="nav-item">
+	          	<a class="nav-link" style="color:red">${USERMODEL.fullName}</a>
+	       	  </li>
+	          <li class="nav-item" style="color:red">
+	          	<a class="nav-link" href="<%=request.getContextPath()%>/logout" title="Đăng xuẩt"><i class="fas fa-sign-out-alt"></i></a>
+	       	  </li>
+          </c:if>
+          <c:if test="${empty USERMODEL}">
+	          <li class="nav-item">
+	            <a class="nav-link" href="<%=request.getContextPath()%>/login">Đăng nhập</a>
+	          </li>
+          </c:if>
         </ul>
       </div>
     </div>
-	</header>
-</body>
-
-</html>
+  </nav>

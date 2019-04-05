@@ -2,11 +2,10 @@ package com.devmaster.restaurantmanagement.service;
 
 import java.util.List;
 
-import com.devmaster.restaurantmanagement.dao.impl.FoodDAO;
 import com.devmaster.restaurantmanagement.dao.impl.FoodGroupDAO;
 import com.devmaster.restaurantmanagement.model.FoodGroupModel;
-import com.devmaster.restaurantmanagement.model.FoodModel;
-import com.devmaster.restaurantmanagement.service.impl.FoodService;
+import com.devmaster.restaurantmanagement.model.UserModel;
+import com.devmaster.restaurantmanagement.service.impl.UserService;
 
 public class Entity {
 	public static void main(String[] args) {
@@ -22,10 +21,17 @@ public class Entity {
 			System.out.println(foodModel);
 		}*/
 		
-		IFoodService foodService = new FoodService();
-		List<FoodModel> listFoodTop = foodService.findAll("khai-vi");
-		for (FoodModel foodModel : listFoodTop) {
-			System.out.println(foodModel);
-		}
+		IUserService userService  = new UserService();
+		UserModel  user=  userService.findUser("admin", "admin");
+//		for (UserModel userModel : user) {
+			System.out.println(user);
+//		}
+//		List<UserModel>  user=  userService.findOne("aaa", "aaaa");
+//		UserModel user = userService.findByUserName("xxx");
+//		if (user != null)
+//			System.out.println(user);
+//		else {
+//			System.out.println("Empty");
+//		}
 	}
 }
