@@ -1,4 +1,4 @@
-package com.devmaster.restaurantmanagement.servlet;
+package test;
 
 import java.io.IOException;
 

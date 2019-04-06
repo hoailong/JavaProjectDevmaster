@@ -70,6 +70,17 @@ CREATE TABLE tblDrink(
 )
 GO
 
+CREATE TABLE tblOrders(
+	OrderId int IDENTITY(1,1) NOT NULL,
+	CustomerId int NOT NULL,
+	DateOrder VARCHAR(15) NULL,
+	TimeId int NULL,
+	NumberPeople int NULL,
+	Request NTEXT NULL,
+	CONSTRAINT PK_Orders PRIMARY KEY(OrderId)
+)
+
+DROP TABLE dbo.tblOrders
 
 --CREATE TABLE tblDrinkGroup(
 --	GroupId INT IDENTITY(1,1) NOT NULL,
@@ -103,6 +114,10 @@ ALTER TABLE dbo.tblFood ADD CONSTRAINT FK_Food_GroupFood FOREIGN KEY(GroupId) RE
 ALTER TABLE dbo.tblDrink ADD CONSTRAINT FK_Drink_DrinkGroup FOREIGN KEY(GroupId) REFERENCES dbo.tblDrinkGroup(GroupId)
 ALTER TABLE dbo.tblOrder ADD CONSTRAINT FK_Order_Table FOREIGN KEY(TableId) REFERENCES dbo.tblTable(TableId)
 ALTER TABLE dbo.tblOrder ADD CONSTRAINT FK_Order_Time FOREIGN KEY(TimeId) REFERENCES dbo.tblTime(TimeId)
+--update 
+--ALTER TABLE dbo.tblOrders ADD CONSTRAINT FK_Orders_User FOREIGN KEY(CustomerId) REFERENCES dbo.tblUser(UserId)
+ALTER TABLE dbo.tblOrders ADD CONSTRAINT FK_Orders_Time FOREIGN KEY(TimeId) REFERENCES dbo.tblTime(TimeId)
+
 --ALTER TABLE dbo.tblOrder ADD CONSTRAINT FK_Order_User FOREIGN KEY(UserId) REFERENCES dbo.tblUser(UserId)
 GO
 

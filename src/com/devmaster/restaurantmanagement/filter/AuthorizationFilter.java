@@ -39,7 +39,6 @@ public class AuthorizationFilter implements Filter {
 //			System.out.println("Nguoi truy cap: " + userModel);
 			if (userModel != null) {	
 				//Nếu là Admin thì cho vào không thì cho ra trang chủ
-				System.out.println(userModel);
 				if (userModel.getGroupId() == 1) {
 					chain.doFilter(request, response);
 				} else if (userModel.getGroupId() == 2){

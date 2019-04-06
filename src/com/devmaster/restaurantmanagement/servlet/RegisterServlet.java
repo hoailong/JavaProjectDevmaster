@@ -8,14 +8,12 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
 
 import com.devmaster.restaurantmanagement.model.UserModel;
 import com.devmaster.restaurantmanagement.service.IUserService;
 import com.devmaster.restaurantmanagement.service.impl.UserService;
 import com.devmaster.restaurantmanagement.util.Constant;
 import com.devmaster.restaurantmanagement.util.FormUtil;
-import com.devmaster.restaurantmanagement.util.HttpUtil;
 import com.devmaster.restaurantmanagement.util.SessionUtil;
 
 @WebServlet("/register")
@@ -27,7 +25,7 @@ public class RegisterServlet extends HttpServlet {
     }
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		RequestDispatcher rd = request.getRequestDispatcher("View/register.jsp");
+		RequestDispatcher rd = request.getRequestDispatcher("view/register.jsp");
 		rd.forward(request, response);
 	}
 
@@ -41,7 +39,7 @@ public class RegisterServlet extends HttpServlet {
 		}
 		else {
 			request.setAttribute("error", "Tài khoản đã tồn tại !");
-			RequestDispatcher rd = request.getRequestDispatcher("View/register.jsp");
+			RequestDispatcher rd = request.getRequestDispatcher("view/register.jsp");
 			rd.forward(request, response);
 		}
 	}

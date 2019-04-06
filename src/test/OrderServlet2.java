@@ -1,6 +1,7 @@
-package com.devmaster.restaurantmanagement.servlet;
+package test;
 
 import java.io.IOException;
+import java.util.List;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -10,12 +11,15 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import com.devmaster.restaurantmanagement.dao.impl.OrderDAO;
+import com.devmaster.restaurantmanagement.dao.impl.TimeDAO;
+import com.devmaster.restaurantmanagement.model.OrderModel;
+import com.devmaster.restaurantmanagement.model.TimeModel;
 
-@WebServlet("/Cancer")
-public class CancerServlet extends HttpServlet {
+@WebServlet("/Order2")
+public class OrderServlet2 extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
-    public CancerServlet() {
+    public OrderServlet2() {
         super();
     }
 
@@ -24,16 +28,19 @@ public class CancerServlet extends HttpServlet {
 		response.setCharacterEncoding("UTF-8");
 		
 		int idTable = Integer.parseInt(request.getParameter("tableId"));
-		int idTime = Integer.parseInt(request.getParameter("timeId"));
+		
+		TimeDAO timeDao = new TimeDAO();
+		List<TimeModel> listTime = timeDao.findAll();
 		OrderDAO orderDao = new OrderDAO();
-		orderDao.delete(idTable, idTime);
+		List<OrderModel> listOrder = orderDao.findAll();
 		
-		request.setAttribute("message", "Hủy thành công!");
+		request.setAttribute("idTable", idTable);
+		request.setAttribute("listTable", listTime);
+		request.setAttribute("listOrder", listOrder);
 		
-		RequestDispatcher rd = request.getRequestDispatcher("/Order");
+		RequestDispatcher rd = request.getRequestDispatcher("/View/order2.jsp");
 		rd.forward(request, response);
 	}
-
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		doGet(request, response);
 	}

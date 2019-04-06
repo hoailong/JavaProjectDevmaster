@@ -7,7 +7,7 @@ a:hover {
 .card-img {
 	overflow:hidden;
 }
-.card img:hover{
+.food-card img:hover{
 	transition:1s;
 	transform: scale(1.2);
 } 

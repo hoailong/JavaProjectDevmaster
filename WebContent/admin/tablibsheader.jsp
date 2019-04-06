@@ -5,9 +5,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta name="description" content="">
 	<meta name="author" content="">
-	<!-- <link rel="icon" href="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTsRLbUSDcmvWi_FEG57LHikgus97diPwgKjGwG9QGPtvL-QbAN" type="image/x-icon" />
-	 -->
-	 <link rel="icon" href="https://www.shareicon.net/download/2016/01/21/706791_support_512x512.png" type="image/x-icon" />
+  <link rel="icon" href="<%=request.getContextPath()%>/resources/images/res-icon.png" type="image/x-icon" />
 	<script src="http://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
 	
 	<!-- Bootstrap Core CSS -->

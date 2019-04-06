@@ -26,7 +26,7 @@ public class LoginServlet extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 /*		HttpSession session = request.getSession();
 		session.invalidate();*/
-		RequestDispatcher rd = request.getRequestDispatcher("View/login.jsp");
+		RequestDispatcher rd = request.getRequestDispatcher("view/login.jsp");
 		rd.forward(request, response);
 	}
 
@@ -46,7 +46,7 @@ public class LoginServlet extends HttpServlet {
 		}
 		else {
 			request.setAttribute("error", "Tài khoản hoặc mật khẩu không đúng !");
-			RequestDispatcher rd = request.getRequestDispatcher("View/login.jsp");
+			RequestDispatcher rd = request.getRequestDispatcher("view/login.jsp");
 			rd.forward(request, response);
 		}
 	}

@@ -4,22 +4,12 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="description" content="">
-  <meta name="author" content="">
-
-  <title>Thực Đơn Chính</title>
-
-  <!-- Bootstrap core CSS -->
-  <link href="<%=request.getContextPath()%>/resources/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-  <link href="<%=request.getContextPath()%>/resources/css/mystyle.css" rel="stylesheet">
-  <link href="<%=request.getContextPath()%>/resources/css/shop-homepage.css" rel="stylesheet">
-  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+  <jsp:include page="common/tablibs.jsp"/>
+  <title>Thực Đơn</title>
 </head>
 <body>
 
-  <jsp:include page="header.jsp"/>
+  <jsp:include page="common/header.jsp"/>
 
   <!-- Page Content -->
   <div class="container">
@@ -66,7 +56,7 @@
             <span class="sr-only">Next</span>
           </a>
         </div>
-	  	<a href="${groupCode}"><h1 style= "text-align:center">${groupCode}</h1></a>
+	  	<a href="${groupCode}"><h1 style= "text-align:center">${groupName}</h1></a>
 	  	<hr/>
 	  	
         <div class="row">
@@ -74,7 +64,7 @@
           <div class="col-lg-4 col-md-6 mb-4">
               <div class="card h-100">
 	              <div class="card-img">
-	              	<a href="#"><img class="card-img-top" src="images/food/${food.image}" alt=""></a>
+	              	<a href="#"><img class="card-img-top" src="<%=request.getContextPath()%>/resources/images/food/${food.image}" alt=""></a>
 	              </div>
 	              <div class="card-body">
                 <h4 class="card-title">
@@ -85,23 +75,13 @@
             </div>
           </div>
 		</c:forEach>
-
         </div>
-        <!-- /.row -->
-
       </div>
-      <!-- /.col-lg-9 -->
-
     </div>
-    <!-- /.row -->
 
   </div>
   <!-- /.container -->
-  <jsp:include page="footer.jsp"/>
-
-  <!-- Bootstrap core JavaScript -->
-  <script src="<%=request.getContextPath()%>/resources/vendor/jquery/jquery.min.js"></script>
-  <script src="<%=request.getContextPath()%>/resources/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <jsp:include page="common/footer.jsp"/>
 
 </body>
 

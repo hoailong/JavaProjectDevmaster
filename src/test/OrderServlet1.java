@@ -1,4 +1,4 @@
-package com.devmaster.restaurantmanagement.servlet;
+package test;
 
 import java.io.IOException;
 import java.util.List;
@@ -13,7 +13,7 @@ import javax.servlet.http.HttpServletResponse;
 import com.devmaster.restaurantmanagement.dao.impl.TableDAO;
 import com.devmaster.restaurantmanagement.model.TableModel;
 
-@WebServlet("/Order")
+@WebServlet("/Order1")
 public class OrderServlet1 extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
