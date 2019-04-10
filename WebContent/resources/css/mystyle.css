@@ -4,7 +4,7 @@ a:hover {
 .my-4 a{
 	color:#000;
 }
-.card-img {
+.card-img , .h-100{
 	overflow:hidden;
 }
 .food-card img:hover{
@@ -127,4 +127,18 @@ span.psw {
   .cancelbtn {
      width: 100%;
   }
+}
+.fw-medium {
+    font-weight: 500;
+}
+.f-15 {
+    font-size: 15px;
+    line-height: 26px;
+}
+.logo-footer {
+	display: inline-block;
+    background: url(https://www.freelogoservices.com/api/main/images/1j+ojl1FOMkX9WypfBe43D6ki...GFrBZPkRjNwXs1M3EMoAJtlSUpg...Vu...P4y) no-repeat;
+    background-size: 100% auto;
+    width: 150px;
+    height: 100px;
 }

@@ -19,7 +19,7 @@ import com.devmaster.restaurantmanagement.service.impl.TimeService;
 import com.devmaster.restaurantmanagement.util.Constant;
 import com.devmaster.restaurantmanagement.util.FormUtil;
 
-@WebServlet("/order")
+@WebServlet("/dat-ban")
 public class OrderServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
     private ITimeService timeService;
