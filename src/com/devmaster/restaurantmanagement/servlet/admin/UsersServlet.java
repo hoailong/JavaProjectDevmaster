@@ -13,6 +13,7 @@ import com.devmaster.restaurantmanagement.service.IUserGroupService;
 import com.devmaster.restaurantmanagement.service.IUserService;
 import com.devmaster.restaurantmanagement.service.impl.UserGroupService;
 import com.devmaster.restaurantmanagement.service.impl.UserService;
+import com.devmaster.restaurantmanagement.util.Constant;
 
 @WebServlet("/admin-users")
 public class UsersServlet extends HttpServlet {
@@ -47,6 +48,7 @@ public class UsersServlet extends HttpServlet {
 			request.setAttribute("customers", userService.findUserByRole(2));
 			url = "admin/users.jsp";
 		}
+		request.setAttribute(Constant.PAGEACTIVE, 4);
 		RequestDispatcher rd = request.getRequestDispatcher(url);
 		rd.forward(request, response);
 	}

@@ -1,6 +1,7 @@
 package com.devmaster.restaurantmanagement.dao.impl;
 
 import java.sql.Connection;
+import java.sql.Date;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -118,6 +119,8 @@ public class AbstractDAO<T> implements GenericDAO<T>{
 					pstm.setInt(index, (Integer) parameter);
 				} else if (parameter instanceof String) {
 					pstm.setString(index, (String) parameter);
+				} else if (parameter instanceof Date) {
+					pstm.setDate(index, (Date) parameter);
 				}
 				//....
 			}

@@ -35,7 +35,9 @@
                 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownBlog" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="color:red">
 	              [ <b>${USERMODEL.fullName}</b> ]
 	            </a>
+
                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownBlog">
+                  <c:if test="${USERMODEL.groupId == 1}"><a class="dropdown-item" href="<%=request.getContextPath()%>/admin">Vào trang quản trị</a></c:if>
                   <a class="dropdown-item" href="#">Thông tin cá nhân</a>
                   <a class="dropdown-item" href="#">Lịch sử</a>
                   <div class="dropdown-divider"></div>

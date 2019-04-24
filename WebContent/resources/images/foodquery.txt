@@ -1,0 +1,8 @@
+﻿--Lấy hết các dữ liệu có trong bảng BOMON ra:
+SELECT * FROM BOMON
+
+--Lấy mã đề tài + tên đề tài trong baeng BOMON ra:
+SELECT MADT, TENDT FROM BOMON
+
+--Đổi tên cột hiển thi
+SELECT MADT AS N'Mã Đề Tài', TENDT AS N'Tên Đề Tài' FROM BOMON

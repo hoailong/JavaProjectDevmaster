@@ -10,20 +10,26 @@ public class OrderDAO extends AbstractDAO<OrderModel> implements IOrderDAO{
 
 	@Override
 	public List<OrderModel> findAll() {
-		String sql = "Select * from tblOrder";
-		List<OrderModel> list = query(sql, new OrderMapper());
-		return list;
+		String sql = "Select * from tblOrder ";
+		return query(sql, new OrderMapper());
 	}
 
 	@Override
-	public void insert(OrderModel orderModel) {
-		String sql = "Insert into tblOrder(TableId,TimeId,UserId) values(?,?,?)";
-		udl(sql, orderModel.getTableId(), orderModel.getTimeId(), 1);
+	public void insert(OrderModel model) {
+		String sql = "Insert into tblOrder(CustomerId, DateOrder, TimeId, NumberPeople, Request, Status) values(?,?,?,?,?,?)";
+		udl(sql, model.getCustomerId(), model.getDateOrder(), model.getTimeId(), model.getNumberPeople(), model.getRequest(), model.getStatus());
 	}
 
 	@Override
-	public void delete(int tableIdDelete, int timeIdDelete) {
-		String sql = "Delete from tblOrder where TableId = ? and TimeId = ?";
-		udl(sql, tableIdDelete, timeIdDelete);
+	public void update(OrderModel model) {
+		String sql = "UPDATE tblOrder set CustomerId = ?, DateOrder = ?, TimeId = ?, NumberPeople = ?, Request = ?, Status = ? Where OrderId = ?";
+		udl(sql, model.getCustomerId(), model.getDateOrder(), model.getTimeId(), model.getNumberPeople(), model.getRequest(), model.getStatus(), model.getOrderId());
 	}
+
+	@Override
+	public void delete(int id) {
+		String sql = "DELETE from tblOrder Where OrderId = ?";
+		udl(sql, id);
+	}
+
 }

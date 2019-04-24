@@ -3,12 +3,12 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<jsp:include page="tablibsheader.jsp"></jsp:include>
+	<jsp:include page="common/tablibsheader.jsp"></jsp:include>
 	<title>Trang quản trị</title>
 </head>
 <body>
 	<div id="wrapper">
-		<jsp:include page="nav.jsp"></jsp:include>
+		<jsp:include page="common/nav.jsp"></jsp:include>
 		        <div id="page-wrapper">
 
             <div class="container-fluid">
@@ -290,7 +290,7 @@
     </div>
     <!-- /#wrapper -->
 
-	<jsp:include page="tablibsfooter.jsp"></jsp:include>
+	<jsp:include page="common/tablibsfooter.jsp"></jsp:include>
 	</div>
 </body>
 </html>

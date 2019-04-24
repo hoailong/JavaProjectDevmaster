@@ -19,4 +19,26 @@ public class FoodGroupService implements IFoodGroupService{
 		return foodGroupDao.findAll();
 	}
 
+	@Override
+	public List<FoodGroupModel> findByName(String name) {
+		return foodGroupDao.findByName(name);
+	}
+
+	@Override
+	public boolean add(FoodGroupModel foodGroupModel) {
+		foodGroupDao.insert(foodGroupModel);
+		return true;
+	}
+
+	@Override
+	public boolean update(FoodGroupModel foodGroupModel) {
+		foodGroupDao.update(foodGroupModel);
+		return true;
+	}
+
+	@Override
+	public void delete(int id) {
+		foodGroupDao.delete(id);
+	}
+
 }

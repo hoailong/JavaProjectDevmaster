@@ -4,12 +4,12 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<jsp:include page="tablibsheader.jsp"></jsp:include>
+	<jsp:include page="common/tablibsheader.jsp"></jsp:include>
 	<title>Thêm mới - Chỉnh sửa tài khoản</title>
 </head>
 <body>
 	<div id="wrapper">
-		<jsp:include page="nav.jsp"></jsp:include>
+		<jsp:include page="common/nav.jsp"></jsp:include>
 		<div id="page-wrapper">
 	        <!-- Page Heading -->
 	        <div class="row">
@@ -20,17 +20,18 @@
 	                </h1>
 	                <ol class="breadcrumb">
 	                    <li>
-	                        <a href="<%=request.getContextPath()%>/admin/"><i class="fas fa-tachometer-alt"></i> Dashboard</a>
+	                        <a href="<%=request.getContextPath()%>/admin/"><i class="fas fa-tachometer-alt"></i> Tổng quan</a>
 	                    </li>
 	                    <li>
-	                        <a href="<%=request.getContextPath()%>/admin-users"><i class="fas fa-users"></i> User Accounts</a>
+	                        <a href="<%=request.getContextPath()%>/admin-users"><i class="fas fa-users"></i> Tài khoản</a>
 	                    </li>
 	                    <li class="active">
-	                        <i class="fas fa-user-plus"></i> Edit - Add
+	                        <i class="fas fa-user-plus"></i> Thêm - Sửa
 	                    </li>
 	                </ol>
 	            </div>
 	        </div>
+	        <div class="container">
 	        <div class="row">
 	        	<div class="col-lg-1"></div>
 	        	<div class="col-lg-8">
@@ -79,8 +80,9 @@
 	                </form>
 	        	</div>
 	        </div>
+	       </div>
         </div>
-		<jsp:include page="tablibsfooter.jsp"></jsp:include>
+		<jsp:include page="common/tablibsfooter.jsp"></jsp:include>
 	</div>
 	<script>
 		$('#btnSaveUser').click(function (e) {
